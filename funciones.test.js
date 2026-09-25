@@ -4,61 +4,61 @@ const funciones = require('./funciones.js');
 //calculando descuentos
 test(`si cuesta 100 y tiene un descuento del 10%, el precio final es 90`, ()=>{
     expect(funciones.calcularDescuento(100, 10)).toBe(90); 
-})
+})// desceuento válido
 
-test(`si cuesta 250 y tiene un descuento del 20%, el precio final es 200`, ()=>{
-    expect(funciones.calcularDescuento(250, 20)).toBe(200); 
-})
+test(`si cuesta 250 y tiene un descuento del 100%, el precio final es 0`, ()=>{
+    expect(funciones.calcularDescuento(250, 100)).toBe(0); 
+})// descuento del 100%
 
 test(`si cuesta 100 y tiene un descuento del 0%, el precio final es 100`, ()=>{
     expect(funciones.calcularDescuento(100, 0)).toBe(100); 
-})
+})//descuento del 0%
 
 test(`si cuesta 99.99 y tiene un descuento del 15%, el precio final es 84.9915`, ()=>{
     expect(funciones.calcularDescuento(99.99, 15)).toBe(84.99149999999999); 
-})
+})//descuento con decimales. Notas: no se fijo a dos decimales porque cambiaban también los otros test 
 
 test(`si cuesta 100 y tiene un descuento del -1%, dará null`, ()=>{
     expect(funciones.calcularDescuento(100, -1)).toBe(null); 
-})
+})//descuento inválido por ser un valor fuera del rango
 
 test(`si cuesta 100 y tiene un descuento del 101%, dará null`, ()=>{
     expect(funciones.calcularDescuento(100, 101)).toBe(null); 
-})
+})//descuento inválido por ser un valor fuera del rango
 
 
 //  validar contraseña
 test(`la contraseña abc es corta, no es válida`, ()=>{
     expect(funciones.validarContraseña("abc")).toBe(false); 
-})
+})//contraseña demasiado corta y sin numeros
 
 test(`la contraseña abcdefgh no incluye números, no es válida`, ()=>{
     expect(funciones.validarContraseña("abcdefgh")).toBe(false); 
-})
+})//contraseña sin número
 
 test(`la contraseña abc12345 es de al menos 8 caracteres e incluye números, por lo tanto es vlida`, ()=>{
     expect(funciones.validarContraseña("abc12345")).toBe(true); 
-})
+})//contraseña válida
 
 test(`la contraseña 12345678 es de al menos 8 caracteres e incluye números, por lo tanto es vlida`, ()=>{
     expect(funciones.validarContraseña("12345678")).toBe(true); 
-})
+})//contraseña válida
 
 test(`la contraseña abc123 NO cumple con la longitud mínima`, ()=>{
     expect(funciones.validarContraseña("abc123")).toBe(false); 
-})
+})//contraseña demasiado corta y con numeros
 
 test(`la contraseña abcdefg1 cumple con la longitud mínima e incluye un número`, ()=>{
     expect(funciones.validarContraseña("abcdefg1")).toBe(true); 
-})
+})//contraseña válida probando número al final
 
-test(`la contraseña abcdefg12 cumple con la longitud mínima e incluye un número`, ()=>{
-    expect(funciones.validarContraseña("abcdefg12")).toBe(true); 
-})
+test(`la contraseña 1abcdefg1 cumple con la longitud mínima e incluye un número`, ()=>{
+    expect(funciones.validarContraseña("1abcdefg1")).toBe(true); 
+})//contraseña válida probando numeros al inicio y al final
 
 test(`si no se incluyen caracteres, la contraseña es inválida`, ()=>{
     expect(funciones.validarContraseña("")).toBe(false); 
-})
+})//contraseña vacía
 
 // Celsius a Fahrenheit 
 test(`0°C es equivalente a 32 Fahrenheit`, ()=>{

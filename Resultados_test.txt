@@ -1,0 +1,53 @@
+$ npm test
+
+> test
+> jest
+
+  console.log
+    El porcentaje es inválido
+
+      at Object.log [as calcularDescuento] (funciones.js:4:17)
+
+  console.log
+    El porcentaje es inválido
+
+      at Object.log [as calcularDescuento] (funciones.js:4:17)
+
+ PASS  ./funciones.test.js
+  √ si cuesta 100 y tiene un descuento del 10%, el precio final es 90 (3 ms)
+  √ si cuesta 250 y tiene un descuento del 100%, el precio final es 0 (1 ms)
+  √ si cuesta 100 y tiene un descuento del 0%, el precio final es 100
+  √ si cuesta 99.99 y tiene un descuento del 15%, el precio final es 84.9915
+  √ si cuesta 100 y tiene un descuento del -1%, dará null (23 ms)
+  √ si cuesta 100 y tiene un descuento del 101%, dará null (3 ms)
+  √ la contraseña abc es corta, no es válida
+  √ la contraseña abcdefgh no incluye números, no es válida (1 ms)
+  √ la contraseña abc12345 es de al menos 8 caracteres e incluye números, por lo tanto es vlida (1 ms)
+  √ la contraseña 12345678 es de al menos 8 caracteres e incluye números, por lo tanto es vlida (1 ms)
+  √ la contraseña abc123 NO cumple con la longitud mínima (1 ms)
+  √ la contraseña abcdefg1 cumple con la longitud mínima e incluye un número (1 ms)
+  √ la contraseña 1abcdefg1 cumple con la longitud mínima e incluye un número
+  √ si no se incluyen caracteres, la contraseña es inválida
+  √ 0°C es equivalente a 32 Fahrenheit
+  √ 100°C es equivalente a 212 Fahrenheit
+  √ -40°C es equivalente a -40 Fahrenheit
+  √ 10°C es equivalente a 50 Fahrenheit
+  √ 37°C es equivalente a 98.6 Fahrenheit
+  √ -10°C es equivalente a 14 Fahrenheit
+  √ 17 años no es mayor de edad (1 ms)
+  √ 18 años ya es mayor de edad
+  √ 19 años es mayor de edad
+  √ 0 años no es mayor de edad (1 ms)
+  √ -1 años no es válido
+  √ 100 años es mayor de edad
+  √ Maiceno Ceratti debe tener el formato correcto
+  √ Gustavo Sardinas debe tener el formato correcto (1 ms)
+  √ "" Sardinas no mostrara un nombre completo
+  √ Gustavo "" no mostrara un nombre completo
+  √ si no se ingresa nada, no habrá nada que mostrar (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       31 passed, 31 total
+Snapshots:   0 total
+Time:        0.754 s, estimated 1 s
+Ran all test suites.
